@@ -2,7 +2,7 @@
 
 # Docker
 # ------------------------------------------------
-sudo yum install docker -y
+sudo yum install -y docker make
 sudo service docker start
 sudo systemctl enable docker
 sudo groupadd docker

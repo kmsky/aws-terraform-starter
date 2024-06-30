@@ -13,7 +13,7 @@ resource "aws_instance" "instance" {
   instance_type           = var.ec2_instance_type
   vpc_security_group_ids  = [aws_security_group.ec2_instance_sg.id]
   subnet_id               = module.vpc.public_subnets[0]
-  user_data               = file("${path.module}/scripts/bastion-userdata.sh")
+  user_data               = file("${path.module}/scripts/instance-userdata.sh")
   key_name                = aws_key_pair.instance_key_pair.key_name
   iam_instance_profile    = aws_iam_instance_profile.instance_profile.name
 
