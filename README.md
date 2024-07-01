@@ -17,9 +17,9 @@ directory and changing specific variables.
 2. Change directory to the environment you want to use (create new if needed)
 3. Add `terraform.tfvars` file with necessary variables in the environment directory
 4. Setup proper bucket for Terraform state in `01_provider.tf` file
-5. Run `make init` to initialize the environment
-6. Run `make plan` to create an execution plan
-7. Run `make apply` to apply the changes with auto-approve
+5. Run `terraform init` to initialize the environment
+6. Run `terraform plan` to create an execution plan
+7. Run `terraform apply` to apply the changes with auto-approve
 
 ## TODO 📝
 - [ ] Add Route53 module
