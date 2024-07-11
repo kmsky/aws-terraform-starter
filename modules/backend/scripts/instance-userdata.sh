@@ -6,7 +6,7 @@ sudo yum install -y docker make
 sudo service docker start
 sudo systemctl enable docker
 sudo groupadd docker
-sudo usermod -aG docker $USER
+sudo usermod -aG docker ec2-user
 sudo newgrp docker
 
 
