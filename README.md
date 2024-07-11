@@ -22,6 +22,7 @@ directory and changing specific variables.
 7. Run `terraform apply` to apply the changes with auto-approve
 
 ## TODO 📝
+- [x] Add Frontend module
 - [ ] Add Route53 module
 - [ ] Add Lambda module
 - [ ] Setup CI/CD pipeline
