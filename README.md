@@ -1,13 +1,15 @@
-# terraform-ec2-base
+# aws-terraform-starter
 
- This repository contains the Terraform code to create simple infrastructure in AWS around EC2 instance.
+ This repository contains the Terraform code to create simple infrastructure in AWS around EC2 instance and S3 static website.
  
 ## Modules ⚡
 - `backend` - This module creates a VPC, Subnet, Security Group, S3 bucket and EC2 instance.
 - `frontend` - This module creates a S3 bucket, CloudFront distribution and ACM certificate.
 - `registry` - This module creates an ECR repository.
 
-VPC is created with external module `terraform-aws-modules/vpc/aws`.
+## External modules 📦
+- VPC is created with external module `terraform-aws-modules/vpc/aws`.
+- ACM certificate is created with external module `terraform-aws-modules/acm/aws`.
 
 ## Environments 🛠️
 By default, repository contains only `production` environment. You can create new environment by copying the `production`
