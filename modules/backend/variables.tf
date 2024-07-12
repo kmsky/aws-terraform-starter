@@ -8,6 +8,11 @@ variable "project_name" {
     type        = string
 }
 
+variable "domain_name" {
+    description = "The domain name for the frontend"
+    type        = string
+}
+
 # VPC / networking
 # ---------------------------------------------------------------------------
 variable "main_network_group" {
@@ -36,8 +41,18 @@ variable "ec2_public_key" {
     type        = string
 }
 
+# Route53
+# ---------------------------------------------------------------------------
+variable "route53_zone_id" {
+    description = "The Route53 zone ID"
+    type        = string
+}
 
+# Locals
+# ---------------------------------------------------------------------------
 locals {
     availability_zones = ["${var.region}a", "${var.region}b", "${var.region}c"]
     vpc_cidr_block = "${var.main_network_group}.${var.secondary_network_group}.0.0/16"
+
+    api_domain_name = "api.${var.domain_name}"
 }

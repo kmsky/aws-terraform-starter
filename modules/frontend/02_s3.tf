@@ -4,6 +4,9 @@ resource "aws_s3_bucket" "frontend" {
   bucket = "${var.project_name}-frontend"
 }
 
+
+# Public access block
+# -----------------------------------------------------------
 resource "aws_s3_bucket_public_access_block" "frontend_public_access_block" {
   bucket = aws_s3_bucket.frontend.bucket
 

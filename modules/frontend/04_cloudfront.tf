@@ -1,6 +1,6 @@
 # DISTRIBUTION
 # --------------------------------------------------------------------------
-resource "aws_cloudfront_distribution" "frontend-distribution" {
+resource "aws_cloudfront_distribution" "frontend_distribution" {
   enabled = true
   aliases = [var.domain_name, "www.${var.domain_name}", "*.${var.domain_name}"]
 
