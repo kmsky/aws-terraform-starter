@@ -18,7 +18,7 @@ directory and changing specific variables.
 ## How to use 🚀
 1. Clone the repository
 2. Change directory to the environment you want to use (create new if needed)
-3. Fill variables in `env.auto.tfvars` file
+3. Fill in the `terraform.tfvars` file with proper values
 4. Setup proper bucket for Terraform state in `01_provider.tf` file
 5. Run `terraform init` to initialize the environment
 6. Run `terraform plan` to create an execution plan
