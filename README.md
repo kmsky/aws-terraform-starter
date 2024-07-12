@@ -18,7 +18,7 @@ directory and changing specific variables.
 ## How to use 🚀
 1. Clone the repository
 2. Change directory to the environment you want to use (create new if needed)
-3. Add `terraform.tfvars` file with necessary variables in the environment directory
+3. Fill variables in `env.auto.tfvars` file
 4. Setup proper bucket for Terraform state in `01_provider.tf` file
 5. Run `terraform init` to initialize the environment
 6. Run `terraform plan` to create an execution plan
@@ -26,6 +26,8 @@ directory and changing specific variables.
 
 ## TODO 📝
 - [x] Add Frontend module
-- [ ] Add Route53 module
+- [x] Add Route53 handling
 - [ ] Add Lambda module
 - [ ] Setup CI/CD pipeline
+- [x] Add example terraform.tfvars file
+- [ ] Add environment specific variables

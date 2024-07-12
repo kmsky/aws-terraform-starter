@@ -1,15 +1,18 @@
 module "backend" {
   source = "../../modules/backend"
 
-  region        = var.region
-  project_name  = var.project_name
+  region          = var.region
+  domain_name     = var.domain_name
+  project_name    = var.project_name
 
   main_network_group        = var.main_network_group
   secondary_network_group   = var.secondary_network_group
 
   ec2_instance_type   = var.ec2_instance_type
   ec2_ami             = var.ec2_ami
-  ec2_public_key     = var.ec2_public_key
+  ec2_public_key      = var.ec2_public_key
+
+  route53_zone_id     = var.route53_zone_id
 }
 
 module "frontend" {
