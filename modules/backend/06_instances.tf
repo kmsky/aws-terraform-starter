@@ -1,13 +1,5 @@
-resource "aws_key_pair" "instance_key_pair" {
-  key_name = "${var.project_name}-key"
-  public_key = var.ec2_public_key
-}
-
-resource "aws_iam_instance_profile" "instance_profile" {
-  name = "${var.project_name}-instance-profile"
-  role = aws_iam_role.ec2_role.name
-}
-
+# Instance
+# -----------------------------------------------------------
 resource "aws_instance" "instance" {
   ami                     = var.ec2_ami
   instance_type           = var.ec2_instance_type
@@ -22,6 +14,8 @@ resource "aws_instance" "instance" {
   }
 }
 
+# Elastic IP
+# -----------------------------------------------------------
 resource "aws_eip" "eip_ec2_instance" {
   instance  = aws_instance.instance.id
   domain    = "vpc"
@@ -30,3 +24,20 @@ resource "aws_eip" "eip_ec2_instance" {
       Name = "${var.project_name}-eip"
   }
 }
+
+# Key Pair
+# -----------------------------------------------------------
+resource "aws_key_pair" "instance_key_pair" {
+  key_name = "${var.project_name}-key"
+  public_key = var.ec2_public_key
+}
+
+# IAM Instance Profile
+# -----------------------------------------------------------
+resource "aws_iam_instance_profile" "instance_profile" {
+  name = "${var.project_name}-instance-profile"
+  role = aws_iam_role.ec2_role.name
+}
+
+
+
